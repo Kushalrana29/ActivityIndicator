@@ -26,10 +26,6 @@ class ViewController: UIViewController {
     func activateActivityIndicator(){
     
         indicator.style = .large
-        
-                
-        
-    
     }
     
     
@@ -39,7 +35,11 @@ class ViewController: UIViewController {
     
 
     @IBAction func stopAnimating(_ sender: Any) {
-        indicator.stopAnimating()
+        
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.indicator.stopAnimating()
+        }
     }
 }
 
